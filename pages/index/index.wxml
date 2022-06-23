@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class='slider'>
+  <slider min='0' max="60" show-value activeColor="#E7624F"  backgroundColor="#666666"></slider>
+</view>
+<view class="task_text">
+<view class="task_title">选择一个任务</view>
+<view class="task_desc">在接下来的20分钟内，你将专注该任务</view>
+</view>

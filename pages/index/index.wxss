@@ -1,0 +1,22 @@
+/**index.wxss**/
+.slider{
+  width: 650rpx;/*宽度*/
+  margin:0 auto;/*居中*/
+  height: 60rpx;
+}
+.task_text{
+text-align: center;/*居中*/
+margin: 30rpx auto;
+height: 90rpx;
+}
+.task_title{
+font-size: 35rpx;
+height: 40rpx;
+line-height: 50rpx;
+}
+.task_desc{
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #999999;
+}
