@@ -1,22 +1,106 @@
 /**index.wxss**/
+.timer-display {
+  font-size: 90rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 40rpx 0;
+  color: #E7624F; /* Theme color */
+}
+
+.session-type-display {
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 50rpx;
+  color: #333333;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-around; /* Distributes space around items */
+  align-items: center;
+  margin: 50rpx 0;
+  padding: 0 20rpx; /* Add some padding to prevent buttons from touching edges */
+}
+
+.control-btn {
+  padding: 25rpx 0; /* Generous vertical padding */
+  width: 180rpx; /* Fixed width for buttons */
+  text-align: center;
+  border-radius: 15rpx; /* Softer rounded corners */
+  font-size: 32rpx;
+  font-weight: bold;
+  border: none;
+  color: #FFFFFF; /* White text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.2s ease; /* Smooth transition for hover/active states */
+}
+
+.btn-start {
+  background-color: #4CAF50; /* Green */
+}
+
+.btn-start:active {
+  background-color: #45a049; /* Darker green on press */
+}
+
+.btn-pause {
+  background-color: #FF9800; /* Orange */
+}
+
+.btn-pause:active {
+  background-color: #fb8c00; /* Darker orange on press */
+}
+
+.btn-reset {
+  background-color: #F44336; /* Red */
+}
+
+.btn-reset:active {
+  background-color: #e53935; /* Darker red on press */
+}
+
+/* Ensure slider and task text styles are still sensible */
 .slider{
-  width: 650rpx;/*宽度*/
-  margin:0 auto;/*居中*/
+  width: 650rpx;
+  margin: 30rpx auto; /* Adjusted margin */
   height: 60rpx;
 }
+
 .task_text{
-text-align: center;/*居中*/
-margin: 30rpx auto;
-height: 90rpx;
+  text-align: center;
+  margin: 30rpx auto;
+  height: 90rpx;
 }
+
 .task_title{
-font-size: 35rpx;
-height: 40rpx;
-line-height: 50rpx;
+  font-size: 35rpx;
+  height: 40rpx;
+  line-height: 50rpx;
 }
+
 .task_desc{
   font-size: 30rpx;
   height: 50rpx;
   line-height: 50rpx;
   color: #999999;
+}
+
+.task-input {
+  width: 80%; /* Take up most of the .task_text container width */
+  padding: 15rpx;
+  margin-top: 10rpx; /* Space below the "Current Task:" title */
+  margin-bottom: 10rpx; /* Space above the dynamic description */
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  text-align: center; /* Center placeholder and input text */
+}
+
+.task_desc_dynamic {
+  font-size: 30rpx;
+  min-height: 50rpx; /* Ensure it takes up space even if empty */
+  line-height: 50rpx;
+  color: #555555; /* Slightly darker than default task_desc for emphasis */
+  padding: 0 20rpx; /* Add some padding to prevent text from touching edges */
+  word-wrap: break-word; /* Ensure long tasks wrap */
 }

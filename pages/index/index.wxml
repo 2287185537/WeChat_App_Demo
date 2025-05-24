@@ -1,8 +1,17 @@
 <!--index.wxml-->
 <view class='slider'>
-  <slider min='0' max="60" show-value activeColor="#E7624F"  backgroundColor="#666666"></slider>
+  <view style="text-align: center; margin-bottom: 10rpx; color: #666;">Work Duration (minutes): {{sliderValue}}</view>
+  <slider min='5' max="60" show-value activeColor="#E7624F"  backgroundColor="#666666" bindchange="sliderChange" value="{{sliderValue}}"></slider>
+</view>
+<view class="timer-display">25:00</view>
+<view class="session-type-display">Work</view>
+<view class="controls-container">
+  <button class="btn-start" bindtap="startTimer">Start</button>
+  <button class="btn-pause" bindtap="pauseTimer">Pause</button>
+  <button class="btn-reset" bindtap="resetTimer">Reset</button>
 </view>
 <view class="task_text">
-<view class="task_title">选择一个任务</view>
-<view class="task_desc">在接下来的20分钟内，你将专注该任务</view>
+  <view class="task_title">Current Task:</view>
+  <input class="task-input" placeholder="What are you working on?" value="{{activeTask}}" bindinput="onTaskInput" />
+  <view class="task_desc_dynamic">{{activeTask ? activeTask : 'Focus on your task!'}}</view>
 </view>
