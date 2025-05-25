@@ -5,6 +5,13 @@
   text-align: center;
   margin: 40rpx 0;
   color: #E7624F; /* Theme color */
+  padding: 10rpx; /* Add some padding so border is not too close to text */
+  border: 3px solid transparent; /* Default transparent border */
+  transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
+}
+
+.timer-display.feedback-active {
+  border-color: #FFD700; /* Gold color for feedback */
 }
 
 .session-type-display {
@@ -103,4 +110,119 @@
   color: #555555; /* Slightly darker than default task_desc for emphasis */
   padding: 0 20rpx; /* Add some padding to prevent text from touching edges */
   word-wrap: break-word; /* Ensure long tasks wrap */
+}
+
+.sound-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx auto;
+  padding: 10rpx 20rpx;
+  width: 60%;
+  border-radius: 10rpx;
+  background-color: #f9f9f9; /* Light background for the container */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sound-toggle-label {
+  font-size: 30rpx;
+  color: #333;
+  margin-right: 20rpx; /* Space between label and switch */
+}
+
+/* Statistics and History Section */
+.stats-history-container {
+  margin: 40rpx 20rpx;
+  padding: 20rpx;
+  background-color: #ffffff; /* White background for the section */
+  border-radius: 15rpx;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+}
+
+.stats-display {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee; /* Separator line */
+  text-align: center;
+}
+
+.stats-label {
+  font-weight: normal;
+  color: #555;
+}
+
+.stats-value {
+  font-weight: bold;
+  color: #E7624F; /* Theme color for emphasis */
+  margin-left: 10rpx;
+}
+
+.history-section {
+  margin-top: 20rpx;
+}
+
+.history-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+  display: block; /* Ensure it takes full width */
+  text-align: center;
+}
+
+.btn-clear-history {
+  display: block; /* Make it a block to center it */
+  margin: 0 auto 20rpx auto; /* Center the button */
+  padding: 15rpx 30rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  background-color: #F44336; /* Red, similar to reset button */
+  border-radius: 10rpx;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-clear-history:active {
+  background-color: #e53935; /* Darker red on press */
+}
+
+.history-empty-message {
+  font-size: 28rpx;
+  color: #777;
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.history-scroll-view {
+  max-height: 400rpx; /* Limit height and enable scrolling */
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx 10rpx;
+  font-size: 28rpx;
+  color: #444;
+  border-bottom: 1rpx solid #f0f0f0; /* Lighter separator for items */
+}
+
+.history-item:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+.history-item-task {
+  flex-basis: 60%; /* Allocate more space for task name */
+  word-wrap: break-word; /* Wrap long task names */
+}
+
+.history-item-time {
+  flex-basis: 40%; /* Space for timestamp */
+  text-align: right;
+  color: #777;
+  font-size: 26rpx;
 }

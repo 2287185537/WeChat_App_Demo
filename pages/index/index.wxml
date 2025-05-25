@@ -1,17 +1,44 @@
 <!--index.wxml-->
-<view class='slider'>
-  <view style="text-align: center; margin-bottom: 10rpx; color: #666;">Work Duration (minutes): {{sliderValue}}</view>
-  <slider min='5' max="60" show-value activeColor="#E7624F"  backgroundColor="#666666" bindchange="sliderChange" value="{{sliderValue}}"></slider>
-</view>
-<view class="timer-display">25:00</view>
+<view class="page-container" style="background-color: {{currentBackgroundColor}}; min-height: 100vh; transition: background-color 1s linear;">
+  <view class='slider'>
+    <view style="text-align: center; margin-bottom: 10rpx; color: #666;">Work Duration (minutes): {{sliderValue}}</view>
+    <slider min='5' max="60" show-value activeColor="#E7624F"  backgroundColor="#666666" bindchange="sliderChange" value="{{sliderValue}}"></slider>
+  </view>
+  <view class="timer-display {{showFeedbackCue ? 'feedback-active' : ''}}">{{currentTimeDisplay}}</view>
 <view class="session-type-display">Work</view>
 <view class="controls-container">
   <button class="btn-start" bindtap="startTimer">Start</button>
   <button class="btn-pause" bindtap="pauseTimer">Pause</button>
   <button class="btn-reset" bindtap="resetTimer">Reset</button>
 </view>
+<view class="sound-toggle-container">
+  <text class="sound-toggle-label">Sound Notification</text>
+  <switch checked="{{soundEnabled}}" bindchange="onSoundChange" color="#E7624F"/>
+</view>
 <view class="task_text">
   <view class="task_title">Current Task:</view>
   <input class="task-input" placeholder="What are you working on?" value="{{activeTask}}" bindinput="onTaskInput" />
   <view class="task_desc_dynamic">{{activeTask ? activeTask : 'Focus on your task!'}}</view>
+</view>
+
+<view class="stats-history-container">
+  <view class="stats-display">
+    <text class="stats-label">Total Completed Pomodoros: </text>
+    <text class="stats-value">{{completedPomodoros}}</text>
+  </view>
+
+  <view class="history-section">
+    <text class="history-title">Pomodoro History:</text>
+    <button class="btn-clear-history" bindtap="clearHistory" wx:if="{{pomodoroHistory.length > 0}}">Clear History</button>
+    <view wx:if="{{pomodoroHistory.length === 0}}" class="history-empty-message">
+      No Pomodoros completed yet. Keep up the good work!
+    </view>
+    <scroll-view scroll-y="true" class="history-scroll-view" wx:else>
+      <view wx:for="{{pomodoroHistory}}" wx:key="completedAt" class="history-item">
+        <text class="history-item-task">{{item.task}}</text>
+        <text class="history-item-time">{{item.completedAt}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
 </view>
